@@ -186,7 +186,7 @@ export default function Hero() {
 
   <div className="relative w-full h-[350px] sm:h-[450px] md:h-[750px] rounded-3xl overflow-hidden">
     <Image
-      src="/shridhar-portfolio/profile1.png"
+      src="/profile1.png"
       alt="Shridhar"
       fill
       className="object-cover object-[center_25%]"
@@ -460,7 +460,7 @@ export default function Hero() {
       {/* IMAGE */}
       <div className="relative w-full aspect-[12/9] rounded-2xl overflow-hidden">
         <Image
-          src="/shridhar-portfolio/profile.png"
+          src="/profile.png"
           alt="Project Image"
           fill
           className="object-cover"
@@ -539,7 +539,7 @@ export default function Hero() {
       {/* IMAGE */}
       <div className="relative w-full aspect-[12/9] rounded-2xl overflow-hidden">
         <Image
-          src="/shridhar-portfolio/profile1.png"
+          src="/profile1.png"
           alt="Parking Management System"
           fill
           className="object-cover"
@@ -606,7 +606,7 @@ function CinematicSection() {
 >
   <div className="relative w-[220px] md:w-[320px] aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl">
     <Image
-      src="/shridhar-portfolio/profile.png"
+      src="/profile.png"
       alt="Shridhar"
       fill
       className="object-cover"
@@ -666,7 +666,7 @@ function CinematicSection() {
     className="mt-10"
   >
     <a
-      href="/shridhar-portfolio/Shridhar_Resume.pdf"
+      href="/Shridhar_Resume.pdf"
       download
       className="inline-flex items-center gap-2 px-6 py-3 border border-white rounded-full text-white hover:bg-white hover:text-black transition duration-300"
     >
