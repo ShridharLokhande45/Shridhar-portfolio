@@ -24,3 +24,38 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes moveGrid {
+  0% { background-position: 0 0; }
+  100% { background-position: 80px 80px; }
+}
+
+@keyframes marqueeLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marqueeRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-marquee-left {
+  animation: marqueeLeft 30s linear infinite;
+}
+
+.animate-marquee-right {
+  animation: marqueeRight 30s linear infinite;
+}
