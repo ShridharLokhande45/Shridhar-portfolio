@@ -12,6 +12,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ReactNode } from "react";
 import { ArrowUp } from "lucide-react"; 
+import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 import { useRef } from "react";
 import { useScroll, useTransform } from "framer-motion";
@@ -49,8 +50,8 @@ export default function Hero() {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
-  const smoothX = useSpring(mouseX, { stiffness: 120, damping: 20 });
-  const smoothY = useSpring(mouseY, { stiffness: 120, damping: 20 });
+  const smoothX = useSpring(mouseX, { stiffness: 450, damping: 35 });
+const smoothY = useSpring(mouseY, { stiffness: 450, damping: 35 });
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -64,8 +65,8 @@ export default function Hero() {
 
   const background = useMotionTemplate`
     radial-gradient(
-      10px circle at ${smoothX}px ${smoothY}px,
-      rgba(255, 255, 255, 0.45),
+      20px circle at ${smoothX}px ${smoothY}px,
+      rgba(255, 255, 255, 0.51),
       transparent 100%
     )
   `;
@@ -346,7 +347,7 @@ export default function Hero() {
         {/* FRONTEND */}
         <div>
           <h3 className="text-white font-semibold mb-4">Frontend</h3>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-4 justify-center md:justify-start w-full">
             <SkillTag icon={<FaHtml5 size={22} className="text-orange-500" />} label="HTML5" />
             <SkillTag icon={<FaCss3Alt size={22} className="text-blue-500" />} label="CSS3" />
             <SkillTag icon={<FaJs size={22} className="text-yellow-400" />} label="JavaScript" />
@@ -357,7 +358,7 @@ export default function Hero() {
         {/* BACKEND */}
         <div>
           <h3 className="text-white font-semibold mb-4">Programming & Backend</h3>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-4 justify-center md:justify-start w-full">
             <SkillTag icon={<FaJava size={22} className="text-red-500" />} label="Core Java" />
             <SkillTag icon={<FaPython size={22} className="text-blue-400" />} label="Python" />
             <SkillTag icon={<SiDjango size={22} className="text-green-500" />} label="Django" />
@@ -369,7 +370,7 @@ export default function Hero() {
         {/* DATABASE */}
         <div>
           <h3 className="text-white font-semibold mb-4">Database</h3>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-4 justify-center md:justify-start w-full">
             <SkillTag icon={<SiMysql size={22} className="text-blue-600" />} label="MySQL" />
             <SkillTag icon={<SiSqlite size={22} className="text-blue-400" />} label="SQLite" />
             <SkillTag icon={<SiSupabase size={22} className="text-emerald-400" />} label="Supabase" />
@@ -402,7 +403,7 @@ export default function Hero() {
         {/* OTHER */}
         <div>
           <h3 className="text-white font-semibold mb-4">Other</h3>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-4 justify-center md:justify-start w-full">
             <SkillTag icon={<FaGitAlt size={22} className="text-orange-600" />} label="Git" />
             <SkillTag icon={<FaGithub size={22} className="text-white" />} label="GitHub" />
             <SkillTag icon={<SiN8N size={22} className="text-red-400" />} label="n8n" />
@@ -413,7 +414,7 @@ export default function Hero() {
         {/* LANGUAGES */}
         <div>
           <h3 className="text-white font-semibold mb-4">Languages</h3>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-4 justify-center md:justify-start w-full">
             <SkillTag label="English" />
             <SkillTag label="Marathi" />
             <SkillTag label="Hindi" />
@@ -718,33 +719,33 @@ function CinematicSection() {
         hidden: {},
         visible: {}
       }}
-      className="flex justify-center items-center gap-5"
+      className="flex justify-center items-center gap-4 sm:gap-6 flex-nowrap"
     >
 
       {/* BUTTON 1 */}
       <motion.a
         href="#"
         variants={{
-          hidden: { opacity: 0, y: 40 },
-          visible: { opacity: 1, y: 0 }
+        hidden: { opacity: 0, y: 40 },
+        visible: { opacity: 1, y: 0 }
         }}
         transition={{ duration: 0.6 }}
-        className="px-7 py-3 bg-white text-black rounded-full text-sm tracking-wide font-medium hover:scale-105 transition duration-300"
-      >
-        INSTAGRAM
+        className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center border border-white rounded-full hover:bg-white hover:text-black transition duration-300"
+        >
+        <FaInstagram size={16} />
       </motion.a>
 
       {/* BUTTON 2 */}
       <motion.a
         href="#"
         variants={{
-          hidden: { opacity: 0, y: 40 },
-          visible: { opacity: 1, y: 0 }
+        hidden: { opacity: 0, y: 40 },
+        visible: { opacity: 1, y: 0 }
         }}
         transition={{ duration: 0.6 }}
-        className="px-7 py-3 bg-white text-black rounded-full text-sm tracking-wide font-medium hover:scale-105 transition duration-300"
-      >
-        LINKEDIN
+        className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center border border-white rounded-full hover:bg-white hover:text-black transition duration-300"
+        >
+        <FaLinkedinIn size={16} />
       </motion.a>
 
       {/* BUTTON 3 */}
@@ -755,8 +756,7 @@ function CinematicSection() {
           visible: { opacity: 1, y: 0 }
         }}
         transition={{ duration: 0.6 }}
-        className="px-7 py-3 border border-white rounded-full text-sm tracking-wide font-medium hover:bg-white hover:text-black transition duration-300"
-      >
+        className="px-5 py-2.5 sm:px-7 sm:py-3 border border-white rounded-full text-xs sm:text-sm tracking-wide font-medium transition duration-300 hover:bg-white hover:text-black"      >
         CONTACT ME
       </motion.a>
 

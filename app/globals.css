@@ -59,3 +59,11 @@ html {
 .animate-marquee-right {
   animation: marqueeRight 30s linear infinite;
 }
+
+html, body {
+  cursor: none;
+}
+
+* {
+  cursor: none !important;
+}
