@@ -3,38 +3,47 @@
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin } from "lucide-react";
 import emailjs from "@emailjs/browser";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 export default function ContactPage() {
-
   const router = useRouter();
 
-  // ✅ Hooks always inside component
   const formRef = useRef<HTMLFormElement>(null);
+
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!formRef.current) return;
 
-    emailjs.sendForm(
-  "service_e0j9rwg",
-  "template_3lb1g8w",
-  formRef.current,
-  "pqIntMhKzfcXI4e7S"
-)
-.then((result) => {
-  console.log("SUCCESS", result);
-  alert("Message Sent Successfully 🚀");
-})
-.catch((error) => {
-  console.log("FULL ERROR:", error);
-  console.log("STATUS:", error.status);
-  console.log("TEXT:", error.text);
-  alert("Failed to send message ❌");
-});
+    setLoading(true);
+
+    emailjs
+      .sendForm(
+        "service_e0j9rwg",
+        "template_3lb1g8w",
+        formRef.current,
+        "pqIntMhKzfcXI4e7S"
+      )
+      .then(() => {
+        setLoading(false);
+        setSuccess(true);
+
+        // Reset form
+        formRef.current?.reset();
+
+        // Hide success after 3 sec
+        setTimeout(() => {
+          setSuccess(false);
+        }, 3000);
+      })
+      .catch(() => {
+        setLoading(false);
+        alert("Failed to send message ❌");
+      });
   };
 
   return (
@@ -99,14 +108,20 @@ export default function ContactPage() {
 
               <div>
                 <label className="text-sm text-gray-400">Name</label>
-                <input name="name" type="text" required
+                <input
+                  name="name"
+                  type="text"
+                  required
                   className="w-full mt-2 bg-zinc-900 border border-zinc-800 rounded-full px-5 py-3 focus:outline-none focus:border-white transition"
                 />
               </div>
 
               <div>
                 <label className="text-sm text-gray-400">Email</label>
-                <input name="email" type="email" required
+                <input
+                  name="email"
+                  type="email"
+                  required
                   className="w-full mt-2 bg-zinc-900 border border-zinc-800 rounded-full px-5 py-3 focus:outline-none focus:border-white transition"
                 />
               </div>
@@ -115,19 +130,37 @@ export default function ContactPage() {
 
             <div>
               <label className="text-sm text-gray-400">Message</label>
-              <textarea name="message" required rows={5}
+              <textarea
+                name="message"
+                required
+                rows={5}
                 className="w-full mt-2 bg-zinc-900 border border-zinc-800 rounded-2xl px-5 py-4 focus:outline-none focus:border-white transition resize-none"
               />
             </div>
 
             <button
               type="submit"
-              className="mt-4 w-full sm:w-auto px-10 py-3 border border-white rounded-full hover:bg-white hover:text-black transition duration-300"
+              disabled={loading}
+              className="mt-4 w-full sm:w-auto px-10 py-3 border border-white rounded-full 
+              hover:bg-white hover:text-black transition duration-300 
+              disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              SUBMIT
+              {loading ? "Sending..." : "SUBMIT"}
             </button>
 
           </form>
+
+          {/* SUCCESS MESSAGE */}
+          {success && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="mt-6 text-green-400 font-medium"
+            >
+              Message Sent Successfully 🚀
+            </motion.div>
+          )}
 
         </motion.div>
       </div>

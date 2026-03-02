@@ -2,7 +2,7 @@
 
 import { motion, useMotionValue, useSpring, useMotionTemplate } from "framer-motion";
 import { useEffect } from "react";
-import { MapPin, Clock, Laptop } from "lucide-react";
+import { Flame, Clock, Laptop } from "lucide-react";
 import { Lightbulb } from "lucide-react";
 import { TrendingUp  } from "lucide-react";
 import { Rocket } from "lucide-react";
@@ -135,37 +135,37 @@ const smoothY = useSpring(mouseY, { stiffness: 450, damping: 35 });
               visible: { opacity: 1, y: 0 }
             }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="flex flex-col items-center gap-3"
-          >
-            <MapPin size={20} className="text-gray-400" />
-            <p className="text-white">PUNE MAHARASHTRA</p>
-            <p className="text-gray-500">INDIA</p>
-          </motion.div>
-
-          <motion.div
-            variants={{
-              hidden: { opacity: 0, y: 80 },
-              visible: { opacity: 1, y: 0 }
-            }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="flex flex-col items-center gap-3"
-          >
-            <Clock size={20} className="text-gray-400" />
-            <p className="text-white">IMMEDIATE JOINER</p>
-            <p className="text-gray-500">AVAILABLE NOW</p>
-          </motion.div>
-
-          <motion.div
-            variants={{
-              hidden: { opacity: 0, y: 80 },
-              visible: { opacity: 1, y: 0 }
-            }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="flex flex-col items-center gap-3"
+            className="flex flex-col items-center gap-1"
           >
             <Laptop size={20} className="text-gray-400" />
-            <p className="text-white">SOFTWARE DEVELOPER</p>
-            <p className="text-gray-500">FULL STACK</p>
+            <p className="text-white">FULL STACK DEVELOPER</p>
+            <p className="text-gray-500">JAVA, PYTHON, FAST API</p>
+          </motion.div>
+
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: 80 },
+              visible: { opacity: 1, y: 0 }
+            }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="flex flex-col items-center gap-1"
+          >
+            <Flame   size={20} className="text-gray-400" />
+            <p className="text-white">BUILDING SCALABLE WEB APPLICATIONS</p>
+            {/* <p className="text-gray-500">AVAILABLE NOW</p> */}
+          </motion.div>
+
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: 80 },
+              visible: { opacity: 1, y: 0 }
+            }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="flex flex-col items-center gap-1"
+          >
+            <Clock size={20} className="text-gray-400" />
+            <p className="text-white">OPEN TO FULL-TIME OPPORTUNITIES</p>
+            <p className="text-gray-500">AVAILABLE NOW</p>
           </motion.div>
 
         </motion.div>
@@ -174,16 +174,6 @@ const smoothY = useSpring(mouseY, { stiffness: 450, damping: 35 });
 
       {/* ================= IMAGE SECTION ================= */}
     <section className="relative bg-black px-6 md:px-16 pb-24 overflow-hidden">
-
-  {/* DOT GRID BACKGROUND */}
-  {/* <div
-    className="absolute inset-0 pointer-events-none"
-    style={{
-      backgroundImage:
-        "radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px)",
-      backgroundSize: "35px 35px",
-    }}
-  /> */}
 
   <div className="relative w-full h-[350px] sm:h-[450px] md:h-[750px] rounded-3xl overflow-hidden">
     <Image
@@ -198,7 +188,7 @@ const smoothY = useSpring(mouseY, { stiffness: 450, damping: 35 });
 
 
 {/* ================= APPROACH SECTION ================= */}
-<section className="bg-black text-white px-6 md:px-16 pt-0 pb-10 relative bg-black">
+<section className="bg-black text-white px-6 md:px-16 pt-0 pb-10 relative">
 
   {/* ABOUT LABEL */}
   <h2 className="text-3xl font-semibold mb-16 text-left text-gray-400">
@@ -237,16 +227,78 @@ const smoothY = useSpring(mouseY, { stiffness: 450, damping: 35 });
   </motion.h2>
 
   <motion.p
-  initial={{ opacity: 0, y: 50 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8, ease: "easeOut" }}
-  viewport={{ once: true }}
-  className="mt-8 max-w-3xl mx-auto text-gray-400 text-base sm:text-lg leading-relaxed text-center"
->
-  On a mission to build intelligent, real-time, and user-centric software 
-  solutions that empower people and businesses to succeed in the digital age.
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8, ease: "easeOut" }}
+    viewport={{ once: true }}
+    className="mt-8 max-w-3xl mx-auto text-gray-400 text-base sm:text-lg leading-relaxed text-center"
+  >
+    On a mission to build intelligent, real-time, and user-centric software 
+    solutions that empower people and businesses to succeed in the digital age.
   </motion.p>
-  
+
+  {/* IMAGE */}
+  <motion.div
+    initial={{ opacity: 0, y: 100 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8, ease: "easeOut" }}
+    viewport={{ once: true }}
+    className="flex justify-center mt-16"
+  >
+    <div className="relative w-[220px] md:w-[320px] aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl bg-black">
+      <Image
+        src="/profile.png"
+        alt="Shridhar"
+        fill
+        className="object-cover"
+      />
+    </div>
+  </motion.div>
+
+  {/* HEADING */}
+  <motion.h2
+    initial={{ opacity: 0, y: 60 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.7 }}
+    viewport={{ once: true }}
+    className="mt-12 text-xl md:text-2xl font-semibold text-white leading-snug tracking-wide text-center max-w-4xl mx-auto"
+  >
+    I'M A SHRIDHAR FULL-STACK DEVELOPER FROM INDIA.
+    MY PASSION FOR CRAFTING SCALABLE SYSTEMS, CLEAN CODE, AND INTUITIVE
+    USER EXPERIENCES SHINES THROUGH IN EVERY PROJECT I DELIVER.
+  </motion.h2>
+
+  {/* PARAGRAPH */}
+  <motion.p
+    initial={{ opacity: 0, y: 60 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.7 }}
+    viewport={{ once: true }}
+    className="mt-4 text-gray-400 text-sm md:text-base leading-relaxed text-center max-w-4xl mx-auto"
+  >
+    Whether that's extending capabilities with Chrome plugins, automating workflows with
+    no-code/AI tools, or architecting scalable systems. With an insatiable curiosity, I embrace
+    unconventional approaches, believing that the right perspective can elevate code into
+    meaningful experiences that truly resonate.
+  </motion.p>
+
+  {/* BUTTON */}
+  <motion.div
+    initial={{ opacity: 0, y: 60 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.7 }}
+    viewport={{ once: true }}
+    className="mt-10 text-center"
+  >
+    <a
+      href="/Shridhar_Resume.pdf"
+      download
+      className="inline-flex items-center gap-2 px-6 py-3 border border-white rounded-full text-white hover:bg-white hover:text-black transition duration-300"
+    >
+      RESUME
+    </a>
+  </motion.div>
+
 </section>
 
 {/* Bottom Gradient Line */}
@@ -433,9 +485,9 @@ const smoothY = useSpring(mouseY, { stiffness: 450, damping: 35 });
 
 
     {/* ================= ACADEMIC PROJECTS ================= */}
+{/* ================= FEATURED PROJECTS ================= */}
 <section className="bg-black text-white py-24">
-
-  {/* HEADING */}
+  
   <div className="px-6 md:px-16">
     <motion.h2
       initial={{ opacity: 0, y: 40 }}
@@ -444,120 +496,221 @@ const smoothY = useSpring(mouseY, { stiffness: 450, damping: 35 });
       viewport={{ once: true }}
       className="text-3xl font-semibold mb-16 text-left text-gray-400"
     >
-      ACADEMIC PROJECTS
+      FEATURED PROJECTS
     </motion.h2>
   </div>
 
-  <div className="max-w-6xl mx-auto px-6 md:px-16 space-y-24">
+  <div className="w-full px-6 md:px-20">
+  <motion.div
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true }}
+    transition={{ staggerChildren: 0.2 }}
+    className="grid grid-cols-1 md:grid-cols-2 gap-10"
+  >
 
-    {/* PROJECT 1 */}
+    {/* CARD 1 */}
     <motion.div
-      initial={{ opacity: 0, y: 80 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: true }}
-      className="grid md:grid-cols-2 gap-12 items-center"
+      variants={{
+        hidden: { opacity: 0, y: 50 },
+        visible: { opacity: 1, y: 0 }
+      }}
+      transition={{ duration: 0.6 }}
     >
-      {/* IMAGE */}
-      <div className="relative w-full aspect-[12/9] rounded-2xl overflow-hidden">
-        <Image
-          src="/profile.png"
-          alt="Project Image"
-          fill
-          className="object-cover"
+      <Link
+        href="/projects/evenon-devices"
+        className="group block border border-zinc-800 
+          rounded-2xl p-8 bg-black 
+          hover:bg-zinc-900/70
+          hover:border-zinc-500
+          hover:-translate-y-1
+          hover:shadow-lg hover:shadow-zinc-900/40
+          transition-all duration-300 ease-out"
+      >
+        <h3 className="text-xl md:text-2xl font-semibold text-white mb-4 flex items-center gap-2">
+        Evenon Devices Website
+
+      <ArrowUpRight
+        size={18}
+        className="opacity-80 transition-all duration-300 
+        group-hover:translate-x-1 
+        group-hover:-translate-y-1 
+        group-hover:opacity-100"
         />
-      </div>
+      </h3>
 
-      {/* CONTENT */}
-      <div>
-        <h3 className="text-2xl font-semibold mb-2">
-          Alumni Management System{" "}
-          <span className="text-gray-400 text-lg">2023/25</span>
-        </h3>
-
-        <p className="text-gray-400 mb-4">
-          <strong>Technologies Used:</strong> HTML/CSS, JavaScript, SQL, Bootstrap.
+        <p className="text-zinc-400 leading-relaxed mb-6">
+          Designed and developed a fully responsive multi-device compatible 
+          website with modern UI/UX and optimized performance.
         </p>
 
-        <ul className="text-gray-300 space-y-2 leading-relaxed">
-          <li>• Alumni record management & communication system.</li>
-          <li>• Registration, search, updates, and reporting features.</li>
-          <li>• Event management and alumni networking integration.</li>
-          <li>• Newsletter tools, career support & donor tracking.</li>
-          <li>• Social media engagement features.</li>
-        </ul>
-
-        <div className="mt-6">
-          <a
-            href="#home"
-            className="inline-flex items-center gap-2 px-4 py-2 text-sm border border-white rounded-full text-white hover:bg-white hover:text-black hover:scale-105 transition-all duration-300"
-          >
-            VIEW PROJECT
-            <ArrowUpRight size={16} />
-          </a>
+        <div className="flex flex-wrap gap-3">
+          {["Next.js", "TypeScript", "Tailwind CSS"].map((tech) => (
+            <span
+              key={tech}
+              className="px-4 py-1 text-sm rounded-full 
+              bg-zinc-900 text-zinc-400 border border-zinc-800"
+            >
+              {tech}
+            </span>
+          ))}
         </div>
-      </div>
+      </Link>
     </motion.div>
 
-    {/* PROJECT 2 */}
-    <motion.div
-      initial={{ opacity: 0, y: 80 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: true }}
-      className="grid md:grid-cols-2 gap-12 items-center"
-    >
-      {/* CONTENT */}
-      <div>
-        <h3 className="text-2xl font-semibold mb-2">
-          Parking Management System{" "}
-          <span className="text-gray-400 text-lg">2023</span>
-        </h3>
 
-        <p className="text-gray-400 mb-4">
-          <strong>Technologies Used:</strong> HTML/CSS, JavaScript, SQL, Bootstrap.
+    {/* CARD 2 */}
+    <motion.div
+      variants={{
+        hidden: { opacity: 0, y: 50 },
+        visible: { opacity: 1, y: 0 }
+      }}
+      transition={{ duration: 0.6 }}
+    >
+      <Link
+        href="/projects/hotel-booking"
+        className="group block border border-zinc-800 
+          rounded-2xl p-8 bg-black 
+          hover:bg-zinc-900/70
+          hover:border-zinc-500
+          hover:-translate-y-1
+          hover:shadow-lg hover:shadow-zinc-900/40
+          transition-all duration-300 ease-out"
+      >
+        <h3 className="text-xl md:text-2xl font-semibold text-white mb-4 flex items-center gap-2">
+        Hotel Booking Platform
+
+      <ArrowUpRight
+        size={18}
+        className="opacity-80 transition-all duration-300 
+        group-hover:translate-x-1 
+        group-hover:-translate-y-1 
+        group-hover:opacity-100"
+        />
+      </h3>
+
+        <p className="text-zinc-400 leading-relaxed mb-6">
+          Full-stack hotel booking system built with Next.js frontend and 
+          FastAPI backend with Supabase integration.
         </p>
 
-        <ul className="text-gray-300 space-y-2 leading-relaxed">
-          <li>• Real-time parking slot booking and tracking system.</li>
-          <li>• User registration and live slot availability updates.</li>
-          <li>• Admin dashboard for slot and user management.</li>
-          <li>• Reduced congestion using real-time updates.</li>
-          <li>• Simple, secure, and user-friendly interface.</li>
-        </ul>
-
-        <div className="mt-6">
-          <a
-            href="#home"
-            className="inline-flex items-center gap-2 px-4 py-2 text-sm border border-white rounded-full text-white hover:bg-white hover:text-black hover:scale-105 transition-all duration-300"
-          >
-            VIEW PROJECT
-            <ArrowUpRight size={16} />
-          </a>
+        <div className="flex flex-wrap gap-3">
+          {["Next.js", "FastAPI", "Python", "Supabase", "Tailwind CSS"].map((tech) => (
+            <span
+              key={tech}
+              className="px-4 py-1 text-sm rounded-full 
+              bg-zinc-900 text-zinc-400 border border-zinc-800"
+            >
+              {tech}
+            </span>
+          ))}
         </div>
-      </div>
-
-      {/* IMAGE */}
-      <div className="relative w-full aspect-[12/9] rounded-2xl overflow-hidden">
-        <Image
-          src="/profile1.png"
-          alt="Parking Management System"
-          fill
-          className="object-cover"
-        />
-      </div>
+      </Link>
     </motion.div>
 
-  </div>
+  </motion.div>
+</div>
 </section>
 
 {/* GRADIENT DIVIDER */}
 <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent"></div>
 
-{/* ================= MORE ABOUT CINEMATIC ================= */}
-<section>
-  <CinematicSection />
+{/* ================= EXPERIENCE SECTION ================= */}
+<section className="bg-black text-white px-6 md:px-16 py-32">
+
+  <div className="grid md:grid-cols-3 gap-12">
+
+    {/* LEFT TITLE */}
+    <div>
+  <motion.h2
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.7 }}
+    viewport={{ once: true }}
+    className="text-3xl font-semibold mb-16 text-left text-gray-400 tracking-wide"
+  >
+    EXPERIENCE - INTERNSHIP
+  </motion.h2>
+</div>
+
+    {/* RIGHT CONTENT */}
+    <div className="md:col-span-2">
+
+      {/* TOP DIVIDER */}
+      <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent mb-12"></div>
+
+      {/* EXPERIENCE ITEM */}
+<motion.div
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  variants={{
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  }}
+  className="space-y-6"
+>
+
+  <motion.div
+    variants={{
+      hidden: { opacity: 0, y: 40 },
+      visible: { opacity: 1, y: 0 }
+    }}
+    transition={{ duration: 0.6 }}
+    className="flex flex-col md:flex-row md:items-center md:justify-between gap-4"
+  >
+    <h3 className="text-2xl md:text-3xl font-semibold tracking-wide">
+      Sourcevative Tech Solutions Pvt. Ltd., Pune
+    </h3>
+
+    <span className="text-sm text-gray-400 tracking-wide">
+      JUNE 2025
+    </span>
+  </motion.div>
+
+  <motion.p
+    variants={{
+      hidden: { opacity: 0, y: 40 },
+      visible: { opacity: 1, y: 0 }
+    }}
+    transition={{ duration: 0.6 }}
+    className="text-2xl md:text-2xl font-semibold text-gray-400 tracking-wide"
+  >
+    AI Development Intern
+  </motion.p>
+
+  <motion.p
+    variants={{
+      hidden: { opacity: 0, y: 40 },
+      visible: { opacity: 1, y: 0 }
+    }}
+    transition={{ duration: 0.6 }}
+    className="text-gray-400 leading-relaxed max-w-3xl"
+  >
+    Led both frontend and backend development, integrated payment gateways 
+    and real-time systems, mentored junior developers, and played a key role 
+    in delivering scalable SaaS products for global clients.
+  </motion.p>
+
+</motion.div>
+
+      {/* BOTTOM DIVIDER */}
+      <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent mt-16"></div>
+
+    </div>
+
+  </div>
+
 </section>
+{/* GRADIENT DIVIDER */}
+<div className="w-full h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent"></div>
+
+{/* ================= MORE ABOUT CINEMATIC ================= */}
+  <CinematicSection />
   </>
 );
 }
@@ -565,231 +718,108 @@ const smoothY = useSpring(mouseY, { stiffness: 450, damping: 35 });
 function CinematicSection() {
   const ref = useRef(null);
 
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start 95%", "end 25%"],
-  });
+  const scrollToTop = () => {
+    const hero = document.getElementById("home");
+    if (hero) {
+      hero.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
-  // Ultra smooth animation curves
-  const textOpacity = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
-  const textY = useTransform(scrollYProgress, [0, 0.2], [60, 0]);
-
-  const imageOpacity = useTransform(scrollYProgress, [0.2, 0.45], [0, 1]);
-  const imageY = useTransform(scrollYProgress, [0.2, 0.45], [120, 0]);
-  const imageScale = useTransform(scrollYProgress, [0.2, 0.45], [0.95, 1]);
 
   return (
     <section
       ref={ref}
-      className="bg-black pt-32 pb-6 px-6 text-center overflow-hidden"
+      className="bg-black text-white px-6 md:px-16 pt-16 pb-10"
     >
-      {/* TITLE */}
-      <motion.div
-        style={{ opacity: textOpacity, y: textY }}
-        className="max-w-5xl mx-auto"
+      {/* HUGE TITLE */}
+      <motion.h2
+        initial={{ opacity: 0, y: 80 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="text-[14vw] md:text-[10vw] font-bold text-center leading-none tracking-tight 
+        bg-gradient-to-r from-gray-500 via-white to-gray-500 
+        bg-clip-text text-transparent mb-16"
       >
-        <h2 className="text-5xl md:text-7xl font-bold text-gray-400 tracking-tight">
-          MORE ABOUT
-        </h2>
+        LET'S TALK
+      </motion.h2>
 
-        <h2 className="text-6xl md:text-8xl font-bold text-gray-300 tracking-tight">
-          SHRIDHAR
-        </h2>
-      </motion.div>
-
-      {/* IMAGE */}
-<motion.div
-  initial={{ opacity: 0, y: 100 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8, ease: "easeOut" }}
-  viewport={{ once: true }}
-  className="flex justify-center mt-16"
->
-  <div className="relative w-[220px] md:w-[320px] aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl">
-    <Image
-      src="/profile.png"
-      alt="Shridhar"
-      fill
-      className="object-cover"
-    />
-  </div>
-</motion.div>
-
-  <motion.div
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true }}
-  variants={{
-    hidden: {},
-    visible: {
-      transition: { staggerChildren: 0.2 }
-    }
-  }}
-  className="mt-10 max-w-4xl mx-auto"
->
-
-  {/* HEADING */}
-  <motion.h2
-    variants={{
-      hidden: { opacity: 0, y: 60 },
-      visible: { opacity: 1, y: 0 }
-    }}
-    transition={{ duration: 0.7 }}
-    className="text-xl md:text-2xl font-semibold text-white leading-snug tracking-wide"
-  >
-    I'M A VERSATILE FULL-STACK MERN DEVELOPER FROM INDIA.
-    MY PASSION FOR CRAFTING SCALABLE SYSTEMS, CLEAN CODE, AND INTUITIVE
-    USER EXPERIENCES SHINES THROUGH IN EVERY PROJECT I DELIVER.
-  </motion.h2>
-
-  {/* PARAGRAPH */}
-  <motion.p
-    variants={{
-      hidden: { opacity: 0, y: 60 },
-      visible: { opacity: 1, y: 0 }
-    }}
-    transition={{ duration: 0.7 }}
-    className="mt-4 text-gray-400 text-sm md:text-base leading-relaxed"
-  >
-    Whether that's extending capabilities with Chrome plugins, automating workflows with
-    no-code/AI tools, or architecting scalable systems. With an insatiable curiosity, I embrace
-    unconventional approaches, believing that the right perspective can elevate code into
-    meaningful experiences that truly resonate.
-  </motion.p>
-
-  {/* BUTTON */}
-  <motion.div
-    variants={{
-      hidden: { opacity: 0, y: 60 },
-      visible: { opacity: 1, y: 0 }
-    }}
-    transition={{ duration: 0.7 }}
-    className="mt-10"
-  >
-    <a
-      href="/Shridhar_Resume.pdf"
-      download
-      className="inline-flex items-center gap-2 px-6 py-3 border border-white rounded-full text-white hover:bg-white hover:text-black transition duration-300"
-    >
-      RESUME
-    </a>
-  </motion.div>
-
-  {/* DIVIDER */}
-  <motion.div
-    variants={{
-      hidden: { opacity: 0 },
-      visible: { opacity: 1 }
-    }}
-    transition={{ duration: 0.8 }}
-    className="mt-16 w-full h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent"
-  />
-
-  </motion.div>
-
-{/* GRADIENT DIVIDER */}
-<div className="w-full h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent mb-4"></div>
-
-{/* ================= FOOTER / LET'S TALK ================= */}
-<section className="bg-black text-white px-6 md:px-16 pt-6 pb-0">
-
-  {/* HUGE TITLE */}
-  <motion.h2
-    initial={{ opacity: 0, y: 80 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 1, ease: "easeOut" }}
-    viewport={{ once: true }}
-    className="text-[14vw] md:text-[10vw] font-bold text-center leading-none tracking-tight 
-    bg-gradient-to-r from-gray-500 via-white to-gray-500 
-    bg-clip-text text-transparent mb-12"
-  >
-    LET'S TALK
-  </motion.h2>
-
-  {/* BUTTON ROW WRAPPER */}
-  <div className="relative w-full mb-12">
-
-    {/* CENTER BUTTONS */}
-    <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      transition={{ staggerChildren: 0.2 }}
-      variants={{
-        hidden: {},
-        visible: {}
-      }}
-      className="flex justify-center items-center gap-4 sm:gap-6 flex-nowrap"
-    >
-
-      {/* BUTTON 1 */}
-      <motion.a
-        href="#"
-        variants={{
-        hidden: { opacity: 0, y: 40 },
-        visible: { opacity: 1, y: 0 }
-        }}
-        transition={{ duration: 0.6 }}
-        className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center border border-white rounded-full hover:bg-white hover:text-black transition duration-300"
+      {/* BUTTON ROW */}
+      <div className="relative w-full mb-16">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ staggerChildren: 0.2 }}
+          variants={{ hidden: {}, visible: {} }}
+          className="flex justify-center items-center gap-4 sm:gap-6 flex-wrap"
         >
-        <FaInstagram size={16} />
-      </motion.a>
+          <motion.a
+            href="https://www.instagram.com/shridhar_lokhande_"
+            variants={{ hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0 } }}
+            transition={{ duration: 0.6 }}
+            className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center border border-white rounded-full hover:bg-white hover:text-black transition duration-300"
+          >
+            <FaInstagram size={18} />
+          </motion.a>
 
-      {/* BUTTON 2 */}
-      <motion.a
-        href="#"
-        variants={{
-        hidden: { opacity: 0, y: 40 },
-        visible: { opacity: 1, y: 0 }
-        }}
-        transition={{ duration: 0.6 }}
-        className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center border border-white rounded-full hover:bg-white hover:text-black transition duration-300"
+          <motion.a
+            href="https://www.linkedin.com/in/shridhar-lokhande-b2aa0a343"
+            variants={{ hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0 } }}
+            transition={{ duration: 0.6 }}
+            className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center border border-white rounded-full hover:bg-white hover:text-black transition duration-300"
+          >
+            <FaLinkedinIn size={18} />
+          </motion.a>
+
+          <motion.a
+            href="https://github.com/ShridharLokhande45"
+            target="_blank"
+            rel="noopener noreferrer"
+            variants={{ hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0 } }}
+            transition={{ duration: 0.6 }}
+            className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center border border-white rounded-full hover:bg-white hover:text-black transition duration-300"
+          >
+            <FaGithub size={20} />
+          </motion.a>
+
+          <motion.a
+            href="/contact"
+            variants={{ hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0 } }}
+            transition={{ duration: 0.6 }}
+            className="px-6 py-3 border border-white rounded-full text-sm tracking-wide font-medium transition duration-300 hover:bg-white hover:text-black"
+          >
+            CONTACT ME
+          </motion.a>
+        </motion.div>
+
+        {/* SCROLL TOP BUTTON */}
+        <motion.button
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          viewport={{ once: true }}
+          onClick={scrollToTop}
+          className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 
+          p-3 rounded-full 
+          bg-white text-black 
+          border border-white 
+          hover:bg-black hover:text-white 
+          transition duration-300 hover:scale-110"
         >
-        <FaLinkedinIn size={16} />
-      </motion.a>
+          <ArrowUp size={18} />
+        </motion.button>
+      </div>
 
-      {/* BUTTON 3 */}
-      <motion.a
-        href="/contact"
-        variants={{
-          hidden: { opacity: 0, y: 40 },
-          visible: { opacity: 1, y: 0 }
-        }}
-        transition={{ duration: 0.6 }}
-        className="px-5 py-2.5 sm:px-7 sm:py-3 border border-white rounded-full text-xs sm:text-sm tracking-wide font-medium transition duration-300 hover:bg-white hover:text-black"      >
-        CONTACT ME
-      </motion.a>
+      {/* DIVIDER */}
+      <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent my-8"></div>
 
-    </motion.div>
-
-    {/* RIGHT SIDE ARROW */}
-    <motion.button
-      initial={{ opacity: 0, scale: 0.8 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.6, delay: 0.6 }}
-      viewport={{ once: true }}
-      onClick={scrollToTop}
-      className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 
-      p-3 rounded-full border border-white/20 
-      hover:bg-white hover:text-black 
-      transition duration-300 hover:scale-110"
-    >
-      <ArrowUp size={18} />
-    </motion.button>
-
-  </div>
-
-</section>
-  {/* GRADIENT DIVIDER */}
-<div className="w-full h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent mb-4"></div>
-
-{/* BOTTOM BAR */}
-<div className="flex flex-col md:flex-row justify-between items-center text-gray-600 text-xs tracking-wide">
-  <p>© {new Date().getFullYear()} Portfolio. All rights reserved.</p>
-  <p className="mt-3 md:mt-0">Design & Developed by Shridhar:)</p>
-</div>
-
-</section>
+      {/* BOTTOM BAR */}
+      <div className="flex flex-col md:flex-row justify-between items-center text-gray-600 text-xs tracking-wide">
+        <p>© {new Date().getFullYear()} Portfolio. All rights reserved.</p>
+        <p className="mt-3 md:mt-0">Design & Developed by Shridhar :)</p>
+      </div>
+    </section>
   );
 }
 
@@ -812,10 +842,3 @@ function SkillTag({ icon, label }: SkillTagProps) {
     </motion.div>
   );
 }
-
-const scrollToTop = () => {
-  const hero = document.getElementById("home");
-  if (hero) {
-    hero.scrollIntoView({ behavior: "smooth" });
-  }
-};
