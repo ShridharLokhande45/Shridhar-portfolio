@@ -52,7 +52,7 @@ export default function Hero() {
   const mouseY = useMotionValue(0);
 
   const smoothX = useSpring(mouseX, { stiffness: 450, damping: 35 });
-const smoothY = useSpring(mouseY, { stiffness: 450, damping: 35 });
+  const smoothY = useSpring(mouseY, { stiffness: 450, damping: 35 });
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -74,7 +74,9 @@ const smoothY = useSpring(mouseY, { stiffness: 450, damping: 35 });
 
   return (
     <>
+    
       {/* ================= HERO SECTION ================= */}
+      
       <section 
        id="home"
        className="relative min-h-[80vh] md:h-[80vh] h-[80vh] bg-black text-white overflow-hidden flex flex-col justify-between">
@@ -101,7 +103,7 @@ const smoothY = useSpring(mouseY, { stiffness: 450, damping: 35 });
       rel="noopener noreferrer"
       initial={{ opacity: 0, y: -30 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
       className="w-10 h-10 sm:w-10 sm:h-10 flex items-center justify-center 
                  border border-white rounded-full 
                  hover:bg-white hover:text-black 
@@ -232,7 +234,7 @@ const smoothY = useSpring(mouseY, { stiffness: 450, damping: 35 });
 <section className="bg-black text-white px-6 md:px-16 pt-0 pb-10 relative">
 
   {/* ABOUT LABEL */}
-  <h2 className="text-3xl font-semibold mb-16 text-left text-gray-400">
+  <h2 className="text-4xl md:text-5xl font-bold tracking-wide mb-16 text-left text-gray-400">
     ABOUT
   </h2>
 
@@ -440,7 +442,7 @@ const smoothY = useSpring(mouseY, { stiffness: 450, damping: 35 });
 <motion.h2
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
       viewport={{ once: true }}
       className="text-3xl font-semibold mb-16 text-left text-gray-400"
     >
@@ -455,7 +457,7 @@ const smoothY = useSpring(mouseY, { stiffness: 450, damping: 35 });
       <motion.div
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
         viewport={{ once: true }}
         className="space-y-10 flex flex-col items-center md:items-start mx-auto"
       >
@@ -586,13 +588,16 @@ const smoothY = useSpring(mouseY, { stiffness: 450, damping: 35 });
     >
       <Link
         href="/projects/evenon-devices"
-        className="group block border border-zinc-800 
-          rounded-2xl p-8 bg-black 
-          hover:bg-zinc-900/70
-          hover:border-zinc-500
-          hover:-translate-y-1
-          hover:shadow-lg hover:shadow-zinc-900/40
-          transition-all duration-300 ease-out"
+        className="group block
+        bg-zinc-900/50 backdrop-blur-sm
+        border border-zinc-800
+        rounded-2xl p-8
+        transition-all duration-300 ease-out
+        hover:-translate-y-2
+        hover:border-zinc-400
+        hover:shadow-xl
+        hover:shadow-black/40
+      "
       >
         <h3 className="text-xl md:text-2xl font-semibold text-white mb-4 flex items-center gap-2">
         Evenon Devices Website
@@ -636,13 +641,16 @@ const smoothY = useSpring(mouseY, { stiffness: 450, damping: 35 });
     >
       <Link
         href="/projects/hotel-booking"
-        className="group block border border-zinc-800 
-          rounded-2xl p-8 bg-black 
-          hover:bg-zinc-900/70
-          hover:border-zinc-500
-          hover:-translate-y-1
-          hover:shadow-lg hover:shadow-zinc-900/40
-          transition-all duration-300 ease-out"
+        className="group block
+        bg-zinc-900/50 backdrop-blur-sm
+        border border-zinc-800
+        rounded-2xl p-8
+        transition-all duration-300 ease-out
+        hover:-translate-y-2
+        hover:border-zinc-400
+        hover:shadow-xl
+        hover:shadow-black/40
+      "
       >
         <h3 className="text-xl md:text-2xl font-semibold text-white mb-4 flex items-center gap-2">
         Hotel Booking Platform
@@ -716,13 +724,16 @@ const smoothY = useSpring(mouseY, { stiffness: 450, damping: 35 });
     >
       <Link
         href="/projects/evenon-devices"
-        className="group block border border-zinc-800 
-          rounded-2xl p-8 bg-black 
-          hover:bg-zinc-900/70
-          hover:border-zinc-500
-          hover:-translate-y-1
-          hover:shadow-lg hover:shadow-zinc-900/40
-          transition-all duration-300 ease-out"
+        className="group block
+        bg-zinc-900/50 backdrop-blur-sm
+        border border-zinc-800
+        rounded-2xl p-8
+        transition-all duration-300 ease-out
+        hover:-translate-y-2
+        hover:border-zinc-400
+        hover:shadow-xl
+        hover:shadow-black/40
+      "
       >
         <h3 className="text-xl md:text-2xl font-semibold text-white mb-4 flex items-center gap-2">
         Evenon Devices Website
@@ -766,13 +777,16 @@ const smoothY = useSpring(mouseY, { stiffness: 450, damping: 35 });
     >
       <Link
         href="/projects/hotel-booking"
-        className="group block border border-zinc-800 
-          rounded-2xl p-8 bg-black 
-          hover:bg-zinc-900/70
-          hover:border-zinc-500
-          hover:-translate-y-1
-          hover:shadow-lg hover:shadow-zinc-900/40
-          transition-all duration-300 ease-out"
+        className="group block
+        bg-zinc-900/50 backdrop-blur-sm
+        border border-zinc-800
+        rounded-2xl p-8
+        transition-all duration-300 ease-out
+        hover:-translate-y-2
+        hover:border-zinc-400
+        hover:shadow-xl
+        hover:shadow-black/40
+      "
       >
         <h3 className="text-xl md:text-2xl font-semibold text-white mb-4 flex items-center gap-2">
         Hotel Booking Platform

@@ -137,7 +137,7 @@ export default async function ProjectPage({
                   transition-all duration-300"
               >
                 <Github size={20} />
-              </Link>
+              </Link> 
             )}
 
             <Link
