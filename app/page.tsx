@@ -1020,11 +1020,11 @@ function CinematicSection() {
 }
 
 type SkillTagProps = {
-  icon?: ReactNode;
+  icon?: React.ReactNode;
   label: string;
 };
 
-const SkillTag = ({ icon, label }) => {
+const SkillTag = ({ icon, label }: SkillTagProps) => {
   return (
     <div
       className="
