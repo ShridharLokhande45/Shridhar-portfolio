@@ -73,7 +73,7 @@ export default function ContactPage() {
           initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="relative w-full mt-12 md:mt-16 h-[450px] sm:h-[550px] md:h-[900px] rounded-3xl overflow-hidden"
+          className="relative w-full mt-12 md:mt-16 h-[450px] sm:h-[550px] md:h-[700px] rounded-3xl overflow-hidden"
         >
           <Image
             src="/profile.png"
@@ -92,13 +92,11 @@ export default function ContactPage() {
           className="mt-6 md:mt-0"
         >
           <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 tracking-tight leading-tight">
-            LET’S WORK <br className="hidden sm:block" />
-            TOGETHER
+            GET IN TOUCH
           </h2>
 
           <p className="text-gray-400 mb-8 md:mb-10 max-w-lg text-sm sm:text-base">
-            Reach out and let's create something amazing together.
-            Let's achieve greatness.
+           I AM OPEN TO FULL-TIME FULL-STACK DEVELOPER OPPORTUNITIES AND COLLABORATIONS.
           </p>
 
           {/* FORM */}

@@ -13,6 +13,7 @@ import { useRouter } from "next/navigation";
 import { ReactNode } from "react";
 import { ArrowUp } from "lucide-react"; 
 import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { SiTypescript, SiNextdotjs, SiTailwindcss } from "react-icons/si";
 
 import { useRef } from "react";
 import { useScroll, useTransform } from "framer-motion";
@@ -89,18 +90,58 @@ const smoothY = useSpring(mouseY, { stiffness: 450, damping: 35 });
         /> */}
 
         {/* TOP BAR */}
-        <div className="flex justify-end items-center px-10 py-6 text-sm tracking-wider relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: -30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
-            className="border px-6 py-2 rounded-full hover:bg-white hover:text-black transition cursor-pointer"
-            >
-            <Link href="/contact">
-            CONTACT NOW
-            </Link>
-          </motion.div>
-        </div>
+<div className="flex justify-between items-center px-10 py-6 text-sm tracking-wider relative z-10">
+
+  {/* LEFT SIDE – Social Buttons */}
+  <div className="flex items-center gap-4">
+
+    <motion.a
+      href="https://www.linkedin.com/in/shridhar-lokhande-b2aa0a343"
+      target="_blank"
+      rel="noopener noreferrer"
+      initial={{ opacity: 0, y: -30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      className="w-10 h-10 sm:w-10 sm:h-10 flex items-center justify-center 
+                 border border-white rounded-full 
+                 hover:bg-white hover:text-black 
+                 transition duration-300"
+    >
+      <FaLinkedinIn size={16} />
+    </motion.a>
+
+    <motion.a
+      href="https://github.com/ShridharLokhande45"
+      target="_blank"
+      rel="noopener noreferrer"
+      initial={{ opacity: 0, y: -30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.1 }}
+      className="w-10 h-10 sm:w-10 sm:h-10 flex items-center justify-center 
+                 border border-white rounded-full 
+                 hover:bg-white hover:text-black 
+                 transition duration-300"
+    >
+      <FaGithub size={18} />
+    </motion.a>
+
+  </div>
+
+  {/* RIGHT SIDE – Contact Button */}
+  <motion.div
+    initial={{ opacity: 0, y: -30 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1 }}
+    className="border px-6 py-2 rounded-full 
+               hover:bg-white hover:text-black 
+               transition cursor-pointer"
+  >
+    <Link href="/contact">
+      CONTACT NOW
+    </Link>
+  </motion.div>
+
+</div>
 
         {/* CENTER TEXT */}
         <div className="relative z-10 flex justify-center items-center flex-1">
@@ -164,7 +205,7 @@ const smoothY = useSpring(mouseY, { stiffness: 450, damping: 35 });
             className="flex flex-col items-center gap-1"
           >
             <Clock size={20} className="text-gray-400" />
-            <p className="text-white">OPEN TO FULL-TIME OPPORTUNITIES</p>
+            <p className="text-white">OPEN TO FULL-STCASK DEVELOPER OPPORTUNITIES</p>
             <p className="text-gray-500">AVAILABLE NOW</p>
           </motion.div>
 
@@ -318,19 +359,27 @@ const smoothY = useSpring(mouseY, { stiffness: 450, damping: 35 });
     >
 
       {/* CARD 1 */}
-      <motion.div
-        variants={{
-          hidden: { opacity: 0, y: 60 },
-          visible: { opacity: 1, y: 0 }
-        }}
-        transition={{ duration: 0.6 }}
-        className="group border border-gray-800 p-12 text-center hover:border-gray-400 transition duration-500"
-      >
-        <div className="flex justify-center mb-6">
-          <Lightbulb size={30} className="text-gray-400" />
-        </div>
-        <h3 className="text-2xl font-semibold mb-4">PROBLEM SOLVER</h3>
-      </motion.div>
+<motion.div
+  variants={{
+    hidden: { opacity: 0, y: 60 },
+    visible: { opacity: 1, y: 0 }
+  }}
+  transition={{ duration: 0.6 }}
+  className="group border border-gray-800 p-12 text-center hover:border-gray-400 transition duration-500"
+>
+  <div className="flex justify-center mb-6">
+    <Lightbulb size={30} className="text-gray-400" />
+  </div>
+
+  <h3 className="text-2xl font-semibold mb-4">
+    PROBLEM SOLVER
+  </h3>
+
+  <div className="flex justify-center mt-6">
+    <div className="w-2.5 h-2.5 rounded-full bg-gray-100" />
+  </div>
+
+</motion.div>
 
       {/* CARD 2 */}
       <motion.div
@@ -344,7 +393,14 @@ const smoothY = useSpring(mouseY, { stiffness: 450, damping: 35 });
         <div className="flex justify-center mb-6">
           <TrendingUp size={30} className="text-gray-400" />
         </div>
-        <h3 className="text-2xl font-semibold mb-4">GROWTH-DRIVEN</h3>
+        <h3 className="text-2xl font-semibold mb-4">
+          GROWTH-DRIVEN
+        </h3>
+
+        <div className="flex justify-center gap-2 mt-6">
+          <div className="w-2.5 h-2.5 rounded-full bg-gray-100" />
+          <div className="w-2.5 h-2.5 rounded-full bg-gray-400" />
+        </div>
       </motion.div>
 
       {/* CARD 3 */}
@@ -359,7 +415,15 @@ const smoothY = useSpring(mouseY, { stiffness: 450, damping: 35 });
         <div className="flex justify-center mb-6">
           <Rocket size={30} className="text-gray-400" />
         </div>
-        <h3 className="text-2xl font-semibold mb-4">IMPACT BUILDER</h3>
+        <h3 className="text-2xl font-semibold mb-4">
+          IMPACT BUILDER
+        </h3>
+
+        <div className="flex justify-center gap-2 mt-6">
+          <div className="w-2.5 h-2.5 rounded-full bg-gray-100" />
+          <div className="w-2.5 h-2.5 rounded-full bg-gray-400" />
+          <div className="w-2.5 h-2.5 rounded-full bg-gray-600" />
+        </div>
       </motion.div>
 
     </motion.div>
@@ -371,7 +435,7 @@ const smoothY = useSpring(mouseY, { stiffness: 450, damping: 35 });
 {/* GRADIENT DIVIDER */}
 <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent"></div>
 
-<section className="bg-black text-white px-6 md:px-16 py-24">
+<section className="bg-black text-white px-6 md:px-16 py-14">
 
 <motion.h2
       initial={{ opacity: 0, y: 40 }}
@@ -399,33 +463,36 @@ const smoothY = useSpring(mouseY, { stiffness: 450, damping: 35 });
         {/* FRONTEND */}
         <div>
           <h3 className="text-white font-semibold mb-4">Frontend</h3>
-          <div className="flex flex-wrap gap-4 justify-center md:justify-start w-full">
-            <SkillTag icon={<FaHtml5 size={22} className="text-orange-500" />} label="HTML5" />
-            <SkillTag icon={<FaCss3Alt size={22} className="text-blue-500" />} label="CSS3" />
-            <SkillTag icon={<FaJs size={22} className="text-yellow-400" />} label="JavaScript" />
-            <SkillTag icon={<FaBootstrap size={22} className="text-purple-500" />} label="Bootstrap" />
+          <div className="flex flex-wrap gap-3 justify-center md:justify-start w-full">
+            <SkillTag icon={<FaHtml5 size={20} className="text-orange-500" />} label="HTML5" />
+            <SkillTag icon={<FaCss3Alt size={20} className="text-blue-500" />} label="CSS3" />
+            <SkillTag icon={<FaJs size={20} className="text-yellow-400" />} label="JavaScript" />
+            <SkillTag icon={<FaBootstrap size={20} className="text-purple-500" />} label="Bootstrap" />
+            <SkillTag icon={<SiTypescript size={20} className="text-blue-400" />} label="TypeScript" />
+            <SkillTag icon={<SiNextdotjs size={20} className="text-white" />} label="Next.js" />
+            <SkillTag icon={<SiTailwindcss size={20} className="text-cyan-400" />} label="Tailwind CSS" />
           </div>
         </div>
 
         {/* BACKEND */}
         <div>
           <h3 className="text-white font-semibold mb-4">Programming & Backend</h3>
-          <div className="flex flex-wrap gap-4 justify-center md:justify-start w-full">
-            <SkillTag icon={<FaJava size={22} className="text-red-500" />} label="Core Java" />
-            <SkillTag icon={<FaPython size={22} className="text-blue-400" />} label="Python" />
-            <SkillTag icon={<SiDjango size={22} className="text-green-500" />} label="Django" />
-            <SkillTag icon={<FaPhp size={22} className="text-indigo-400" />} label="PHP" />
-            <SkillTag icon={<SiFastapi size={22} className="text-teal-400" />} label="FastAPI" />
+          <div className="flex flex-wrap gap-3 justify-center md:justify-start w-full">
+            <SkillTag icon={<FaJava size={20} className="text-red-500" />} label="Core Java" />
+            <SkillTag icon={<FaPython size={20} className="text-blue-400" />} label="Python" />
+            <SkillTag icon={<SiDjango size={20} className="text-green-500" />} label="Django" />
+            <SkillTag icon={<FaPhp size={20} className="text-indigo-400" />} label="PHP" />
+            <SkillTag icon={<SiFastapi size={20} className="text-teal-400" />} label="FastAPI" />
           </div>
         </div>
 
         {/* DATABASE */}
         <div>
           <h3 className="text-white font-semibold mb-4">Database</h3>
-          <div className="flex flex-wrap gap-4 justify-center md:justify-start w-full">
-            <SkillTag icon={<SiMysql size={22} className="text-blue-600" />} label="MySQL" />
-            <SkillTag icon={<SiSqlite size={22} className="text-blue-400" />} label="SQLite" />
-            <SkillTag icon={<SiSupabase size={22} className="text-emerald-400" />} label="Supabase" />
+          <div className="flex flex-wrap gap-3 justify-center md:justify-start w-full">
+            <SkillTag icon={<SiMysql size={20} className="text-blue-600" />} label="MySQL" />
+            <SkillTag icon={<SiSqlite size={20} className="text-blue-400" />} label="SQLite" />
+            <SkillTag icon={<SiSupabase size={20} className="text-emerald-400" />} label="Supabase" />
           </div>
         </div>
 
@@ -444,22 +511,22 @@ const smoothY = useSpring(mouseY, { stiffness: 450, damping: 35 });
         {/* TOOLS */}
         <div>
           <h3 className="text-white font-semibold mb-4">Development Tools</h3>
-          <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-            <SkillTag icon={<Code2 size={22} className="text-gray-300" />} label="VS Code" />
-            <SkillTag icon={<Code2 size={22} className="text-gray-300" />} label="Cursor" />
-            <SkillTag icon={<SiFigma size={22} className="text-pink-500" />} label="Figma" />
-            <SkillTag icon={<SiFramer size={22} className="text-purple-400" />} label="Framer" />
+          <div className="flex flex-wrap gap-3 justify-center md:justify-start">
+            <SkillTag icon={<Code2 size={20} className="text-gray-300" />} label="VS Code" />
+            <SkillTag icon={<Code2 size={20} className="text-gray-300" />} label="Cursor" />
+            <SkillTag icon={<SiFigma size={20} className="text-pink-500" />} label="Figma" />
+            <SkillTag icon={<SiFramer size={20} className="text-purple-400" />} label="Framer" />
           </div>
         </div>
 
         {/* OTHER */}
         <div>
           <h3 className="text-white font-semibold mb-4">Other</h3>
-          <div className="flex flex-wrap gap-4 justify-center md:justify-start w-full">
-            <SkillTag icon={<FaGitAlt size={22} className="text-orange-600" />} label="Git" />
-            <SkillTag icon={<FaGithub size={22} className="text-white" />} label="GitHub" />
-            <SkillTag icon={<SiN8N size={22} className="text-red-400" />} label="n8n" />
-            <SkillTag icon={<SiOpenai size={22} className="text-gray-300" />} label="ChatGPT" />
+          <div className="flex flex-wrap gap-3 justify-center md:justify-start w-full">
+            <SkillTag icon={<FaGitAlt size={20} className="text-orange-600" />} label="Git" />
+            <SkillTag icon={<FaGithub size={20} className="text-white" />} label="GitHub" />
+            <SkillTag icon={<SiN8N size={20} className="text-red-400" />} label="n8n" />
+            <SkillTag icon={<SiOpenai size={20} className="text-gray-300" />} label="ChatGPT" />
           </div>
         </div>
 
@@ -485,8 +552,8 @@ const smoothY = useSpring(mouseY, { stiffness: 450, damping: 35 });
 
 
     {/* ================= ACADEMIC PROJECTS ================= */}
-{/* ================= FEATURED PROJECTS ================= */}
-<section className="bg-black text-white py-24">
+
+<section className="bg-black text-white pt-12 pb-14">
   
   <div className="px-6 md:px-16">
     <motion.h2
@@ -494,7 +561,137 @@ const smoothY = useSpring(mouseY, { stiffness: 450, damping: 35 });
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7 }}
       viewport={{ once: true }}
-      className="text-3xl font-semibold mb-16 text-left text-gray-400"
+      className="text-3xl font-semibold mb-12 text-left text-gray-400"
+    >
+      ACADEMIC PROJECTS
+    </motion.h2>
+  </div>
+
+  <div className="w-full px-6 md:px-20">
+  <motion.div
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true }}
+    transition={{ staggerChildren: 0.2 }}
+    className="grid grid-cols-1 md:grid-cols-2 gap-10"
+  >
+
+    {/* CARD 1 */}
+    <motion.div
+      variants={{
+        hidden: { opacity: 0, y: 50 },
+        visible: { opacity: 1, y: 0 }
+      }}
+      transition={{ duration: 0.6 }}
+    >
+      <Link
+        href="/projects/evenon-devices"
+        className="group block border border-zinc-800 
+          rounded-2xl p-8 bg-black 
+          hover:bg-zinc-900/70
+          hover:border-zinc-500
+          hover:-translate-y-1
+          hover:shadow-lg hover:shadow-zinc-900/40
+          transition-all duration-300 ease-out"
+      >
+        <h3 className="text-xl md:text-2xl font-semibold text-white mb-4 flex items-center gap-2">
+        Evenon Devices Website
+
+      <ArrowUpRight
+        size={18}
+        className="opacity-80 transition-all duration-300 
+        group-hover:translate-x-1 
+        group-hover:-translate-y-1 
+        group-hover:opacity-100"
+        />
+      </h3>
+
+        <p className="text-zinc-400 leading-relaxed mb-6">
+          Designed and developed a fully responsive multi-device compatible 
+          website with modern UI/UX and optimized performance.
+        </p>
+
+        <div className="flex flex-wrap gap-3">
+          {["Next.js", "TypeScript", "Tailwind CSS"].map((tech) => (
+            <span
+              key={tech}
+              className="px-4 py-1 text-sm rounded-full 
+              bg-zinc-900 text-zinc-400 border border-zinc-800"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+      </Link>
+    </motion.div>
+
+
+    {/* CARD 2 */}
+    <motion.div
+      variants={{
+        hidden: { opacity: 0, y: 50 },
+        visible: { opacity: 1, y: 0 }
+      }}
+      transition={{ duration: 0.6 }}
+    >
+      <Link
+        href="/projects/hotel-booking"
+        className="group block border border-zinc-800 
+          rounded-2xl p-8 bg-black 
+          hover:bg-zinc-900/70
+          hover:border-zinc-500
+          hover:-translate-y-1
+          hover:shadow-lg hover:shadow-zinc-900/40
+          transition-all duration-300 ease-out"
+      >
+        <h3 className="text-xl md:text-2xl font-semibold text-white mb-4 flex items-center gap-2">
+        Hotel Booking Platform
+
+      <ArrowUpRight 
+        size={18}
+        className="opacity-80 transition-all duration-300 
+        group-hover:translate-x-1 
+        group-hover:-translate-y-1 
+        group-hover:opacity-100"
+        />
+      </h3>
+
+        <p className="text-zinc-400 leading-relaxed mb-6">
+          Full-stack hotel booking system built with Next.js frontend and 
+          FastAPI backend with Supabase integration.
+        </p>
+
+        <div className="flex flex-wrap gap-3">
+          {["Next.js", "FastAPI", "Python", "Supabase", "Tailwind CSS"].map((tech) => (
+            <span
+              key={tech}
+              className="px-4 py-1 text-sm rounded-full 
+              bg-zinc-900 text-zinc-400 border border-zinc-800"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+      </Link>
+    </motion.div>
+
+  </motion.div>
+</div>
+</section>
+
+{/* GRADIENT DIVIDER */}
+<div className="w-full h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent"></div>
+
+{/* ================= FEATURED PROJECTS ================= */}
+<section className="bg-black text-white py-14">
+  
+  <div className="px-6 md:px-16">
+    <motion.h2
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7 }}
+      viewport={{ once: true }}
+      className="text-3xl font-semibold mb-12 text-left text-gray-400"
     >
       FEATURED PROJECTS
     </motion.h2>
@@ -616,7 +813,7 @@ const smoothY = useSpring(mouseY, { stiffness: 450, damping: 35 });
 <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent"></div>
 
 {/* ================= EXPERIENCE SECTION ================= */}
-<section className="bg-black text-white px-6 md:px-16 py-32">
+<section className="bg-black text-white px-6 md:px-16 py-16">
 
   <div className="grid md:grid-cols-3 gap-12">
 
@@ -637,23 +834,23 @@ const smoothY = useSpring(mouseY, { stiffness: 450, damping: 35 });
     <div className="md:col-span-2">
 
       {/* TOP DIVIDER */}
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent mb-12"></div>
+      {/* <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent mb-12"></div> */}
 
       {/* EXPERIENCE ITEM */}
-<motion.div
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true }}
-  variants={{
-    hidden: {},
-    visible: {
-      transition: {
+      <motion.div
+        initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+          hidden: {},
+        visible: {
+        transition: {
         staggerChildren: 0.2
+        }
       }
-    }
-  }}
-  className="space-y-6"
->
+    }}
+      className="space-y-6"
+    >
 
   <motion.div
     variants={{
@@ -696,18 +893,18 @@ const smoothY = useSpring(mouseY, { stiffness: 450, damping: 35 });
     in delivering scalable SaaS products for global clients.
   </motion.p>
 
-</motion.div>
+  </motion.div>
 
       {/* BOTTOM DIVIDER */}
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent mt-16"></div>
+      {/* <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent mt-16"></div> */}
 
     </div>
 
   </div>
 
-</section>
-{/* GRADIENT DIVIDER */}
-<div className="w-full h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent"></div>
+  </section>
+  {/* GRADIENT DIVIDER */}
+  <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent"></div>
 
 {/* ================= MORE ABOUT CINEMATIC ================= */}
   <CinematicSection />
@@ -724,7 +921,6 @@ function CinematicSection() {
       hero.scrollIntoView({ behavior: "smooth" });
     }
   };
-
 
   return (
     <section
@@ -828,17 +1024,25 @@ type SkillTagProps = {
   label: string;
 };
 
-function SkillTag({ icon, label }: SkillTagProps) {
+const SkillTag = ({ icon, label }) => {
   return (
-    <motion.div
-      whileHover={{ scale: 1.08 }}
-      className="flex items-center gap-3 px-5 py-3 rounded-full 
-      bg-white/5 backdrop-blur-md border border-white/10 
-      hover:border-white/30 hover:bg-white/10 
-      transition-all duration-300 text-sm font-medium"
+    <div
+      className="
+        inline-flex items-center
+        gap-1.5
+        px-3 py-2
+        text-xs
+        rounded-full
+        bg-zinc-900
+        border border-zinc-700
+        hover:border-zinc-400
+        hover:bg-zinc-800
+        hover:scale-105
+        transition-all duration-200 ease-in-out
+      "
     >
-      {icon && icon}
-      {label}
-    </motion.div>
+      {icon && <span className="flex items-center">{icon}</span>}
+      <span className="leading-none">{label}</span>
+    </div>
   );
-}
+};

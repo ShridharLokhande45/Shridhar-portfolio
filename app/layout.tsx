@@ -3,15 +3,19 @@ import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import GlobalSpotlight from "@/components/GlobalSpotlight";
 
-export const metadata: Metadata = {
-  title: "Shridhar Portfolio",
-  description: "Full Stack Developer Portfolio",
-};
-
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
+
+export const metadata: Metadata = {
+  title: {
+    default: "Shridhar | Full Stack Developer",
+    template: "%s | Shridhar",
+  },
+  description:
+    "Portfolio of Shridhar - Full Stack Developer specializing in Next.js, FastAPI & modern web applications.",
+};
 
 export default function RootLayout({
   children,
@@ -20,7 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={spaceGrotesk.className}>
+      <body className={`${spaceGrotesk.className} bg-black text-white`}>
         <GlobalSpotlight />
         {children}
       </body>
