@@ -776,7 +776,7 @@ export default function Hero() {
       transition={{ duration: 0.6 }}
     >
       <Link
-        href="/projects/hotel-booking"
+        href="/projects/v7agrotech"
         className="group block
         bg-zinc-900/50 backdrop-blur-sm
         border border-zinc-800
@@ -789,7 +789,7 @@ export default function Hero() {
       "
       >
         <h3 className="text-xl md:text-2xl font-semibold text-white mb-4 flex items-center gap-2">
-        Hotel Booking Platform
+        V7AgroTech
 
       <ArrowUpRight
         size={18}
@@ -801,12 +801,13 @@ export default function Hero() {
       </h3>
 
         <p className="text-zinc-400 leading-relaxed mb-6">
-          Full-stack hotel booking system built with Next.js frontend and 
-          FastAPI backend with Supabase integration.
+          Frontend agriculture services website built with HTML, CSS, Bootstrap, and JavaScript, 
+          featuring responsive design, animated statistics counters, 
+          and modern UI to present agricultural products and farming support services.
         </p>
 
         <div className="flex flex-wrap gap-3">
-          {["Next.js", "FastAPI", "Python", "Supabase", "Tailwind CSS"].map((tech) => (
+          {["HTML5", "CSS3", "Bootstrap 5", "JavaScript", "GitHub"].map((tech) => (
             <span
               key={tech}
               className="px-4 py-1 text-sm rounded-full 

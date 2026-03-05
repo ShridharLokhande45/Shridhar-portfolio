@@ -45,6 +45,30 @@ const projects = {
     live: "#",
     github: "https://github.com/yourusername/hotel-booking",
   },
+
+  "v7agrotech": {
+  title: "V7AgroTech – Agriculture Products & Services Website",
+  overview:
+    "Frontend agriculture services website built with HTML, CSS, Bootstrap, and JavaScript featuring responsive design, animated statistics counters and modern UI.",
+
+  stack: {
+    frontend: ["HTML5", "CSS3", "Bootstrap 5", "JavaScript"],
+    backend: ["—"],
+    database: ["—"],
+    deployment: ["GitHub Pages"],
+  },
+
+  categories: ["Frontend Project", "Agriculture Website"],
+
+  achievements: [
+    "Designed and deployed a complete agriculture services website independently.",
+    "Applied modern UI design practices for improved readability and user experience.",
+    "Successfully hosted the project using GitHub Pages for public access.",
+  ],
+
+  live: "https://shridharlokhande45.github.io/V7AgroTech/",
+  github: "https://github.com/yourusername/v7agrotech",
+},
 };
 
 export default async function ProjectPage({
