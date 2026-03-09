@@ -94,8 +94,8 @@ export default async function ProjectPage({
         {/* LEFT SIDEBAR */}
         <div className="md:col-span-1 border border-zinc-800 rounded-2xl p-8 bg-zinc-900/40 h-fit">
 
-          <h3 className="text-xl font-semibold mb-8 text-white border-l-2 border-zinc-600 pl-4">
-            Project Details
+          <h3 className="text-xl font-semibold mb-8 text-white border-l-2 border-[#FA8112] pl-4 shadow-[ -4px_0px_10px_rgba(250,129,18,0.4)]">
+          Project Details
           </h3>
 
           {/* STACK SECTIONS */}
@@ -185,16 +185,16 @@ export default async function ProjectPage({
             {project.title}
           </h1>
 
-          <h2 className="text-2xl font-semibold text-white border-l-2 border-zinc-600 pl-4 mb-6">
-            Overview
+          <h2 className="text-2xl font-semibold mb-8 text-white border-l-2 border-[#FA8112] pl-4 shadow-[ -4px_0px_10px_rgba(250,129,18,0.4)]">
+          Overview
           </h2>
 
           <p className="text-zinc-400 leading-relaxed mb-16 max-w-3xl">
             {project.overview}
           </p>
 
-          <h2 className="text-2xl font-semibold text-white border-l-2 border-zinc-600 pl-4 mb-8">
-            Key Achievements
+          <h2 className="text-2xl font-semibold mb-8 text-white border-l-2 border-[#FA8112] pl-4 shadow-[ -4px_0px_10px_rgba(250,129,18,0.4)]">
+          Key Achievements
           </h2>
 
           <div className="space-y-6 mb-16">

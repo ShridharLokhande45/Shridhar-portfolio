@@ -683,91 +683,7 @@ export default function Hero() {
       </Link>
     </motion.div>
 
-  </motion.div>
-</div>
-</section>
-
-{/* GRADIENT DIVIDER */}
-<div className="w-full h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent"></div>
-
-{/* ================= FEATURED PROJECTS ================= */}
-<section className="bg-black text-white py-14">
-  
-  <div className="px-6 md:px-16">
-    <motion.h2
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7 }}
-      viewport={{ once: true }}
-      className="text-3xl font-semibold mb-12 text-left text-gray-400"
-    >
-      FEATURED PROJECTS
-    </motion.h2>
-  </div>
-
-  <div className="w-full px-6 md:px-20">
-  <motion.div
-    initial="hidden"
-    whileInView="visible"
-    viewport={{ once: true }}
-    transition={{ staggerChildren: 0.2 }}
-    className="grid grid-cols-1 md:grid-cols-2 gap-10"
-  >
-
-    {/* CARD 1 */}
-    <motion.div
-      variants={{
-        hidden: { opacity: 0, y: 50 },
-        visible: { opacity: 1, y: 0 }
-      }}
-      transition={{ duration: 0.6 }}
-    >
-      <Link
-        href="/projects/evenon-devices"
-        className="group block
-        bg-zinc-900/50 backdrop-blur-sm
-        border border-zinc-800
-        rounded-2xl p-8
-        transition-all duration-300 ease-out
-        hover:-translate-y-2
-        hover:border-zinc-400
-        hover:shadow-xl
-        hover:shadow-black/40
-      "
-      >
-        <h3 className="text-xl md:text-2xl font-semibold text-white mb-4 flex items-center gap-2">
-        Evenon Devices Website
-
-      <ArrowUpRight
-        size={18}
-        className="opacity-80 transition-all duration-300 
-        group-hover:translate-x-1 
-        group-hover:-translate-y-1 
-        group-hover:opacity-100"
-        />
-      </h3>
-
-        <p className="text-zinc-400 leading-relaxed mb-6">
-          Designed and developed a fully responsive multi-device compatible 
-          website with modern UI/UX and optimized performance.
-        </p>
-
-        <div className="flex flex-wrap gap-3">
-          {["Next.js", "TypeScript", "Tailwind CSS"].map((tech) => (
-            <span
-              key={tech}
-              className="px-4 py-1 text-sm rounded-full 
-              bg-zinc-900 text-zinc-400 border border-zinc-800"
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
-      </Link>
-    </motion.div>
-
-
-    {/* CARD 2 */}
+    {/* CARD 3 */}
     <motion.div
       variants={{
         hidden: { opacity: 0, y: 50 },
@@ -819,10 +735,91 @@ export default function Hero() {
         </div>
       </Link>
     </motion.div>
-
   </motion.div>
 </div>
 </section>
+
+{/* GRADIENT DIVIDER */}
+<div className="w-full h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent"></div>
+
+{/* ================= FEATURED PROJECTS ================= */}
+{/* <section className="bg-black text-white py-14"> */}
+  
+  {/* <div className="px-6 md:px-16">
+    <motion.h2
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7 }}
+      viewport={{ once: true }}
+      className="text-3xl font-semibold mb-12 text-left text-gray-400"
+    >
+      FEATURED PROJECTS
+    </motion.h2>
+  </div> */}
+
+  {/* <div className="w-full px-6 md:px-20">
+  <motion.div
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true }}
+    transition={{ staggerChildren: 0.2 }}
+    className="grid grid-cols-1 md:grid-cols-2 gap-10"
+  > */}
+
+    {/* CARD 1 */}
+    {/* <motion.div
+      variants={{
+        hidden: { opacity: 0, y: 50 },
+        visible: { opacity: 1, y: 0 }
+      }}
+      transition={{ duration: 0.6 }}
+    > */}
+      {/* <Link
+        href="/projects/evenon-devices"
+        className="group block
+        bg-zinc-900/50 backdrop-blur-sm
+        border border-zinc-800
+        rounded-2xl p-8
+        transition-all duration-300 ease-out
+        hover:-translate-y-2
+        hover:border-zinc-400
+        hover:shadow-xl
+        hover:shadow-black/40
+      "
+      >
+        <h3 className="text-xl md:text-2xl font-semibold text-white mb-4 flex items-center gap-2">
+        Evenon Devices Website
+
+      <ArrowUpRight
+        size={18}
+        className="opacity-80 transition-all duration-300 
+        group-hover:translate-x-1 
+        group-hover:-translate-y-1 
+        group-hover:opacity-100"
+        />
+      </h3>
+
+        <p className="text-zinc-400 leading-relaxed mb-6">
+          Designed and developed a fully responsive multi-device compatible 
+          website with modern UI/UX and optimized performance.
+        </p>
+
+        <div className="flex flex-wrap gap-3">
+          {["Next.js", "TypeScript", "Tailwind CSS"].map((tech) => (
+            <span
+              key={tech}
+              className="px-4 py-1 text-sm rounded-full 
+              bg-zinc-900 text-zinc-400 border border-zinc-800"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+      </Link>
+    </motion.div>
+  </motion.div>
+</div>
+</section> */}
 
 {/* GRADIENT DIVIDER */}
 <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent"></div>
